@@ -1,0 +1,10 @@
+/*
+ * Tweaks and overrides to poole.css
+ */
+
+pre {
+   padding: 0;
+   overflow-x: auto !important;
+   white-space: pre !important;
+   word-wrap: normal !important;
+}

@@ -1,0 +1,32 @@
+data-volume:
+    image: debian:jessie
+    volumes:
+       - /var/blog:/var/blog
+       - /var/_built_blog:/var/_built
+
+hugo:
+    build: ./hugo
+    volumes_from:
+        - data-volume
+    env_file:
+        - envs
+    log_driver: "json-file"
+    log_opt:
+        max-size: "50m"
+        max-file: "7"
+    restart: always
+
+nginx:
+    build: ./nginx
+    volumes_from:
+        - data-volume
+    env_file:
+        - envs
+    log_driver: "json-file"
+    log_opt:
+        max-size: "50m"
+        max-file: "7"
+    ports:
+       - "443:443"
+       - "80:80"
+    restart: always
