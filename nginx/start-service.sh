@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+echo "Start cronjob"
+crontab /letsencrypt.sh/service-cron && cron
+
 for p in HUGO_PORT_1313_TCP_ADDR HUGO_PORT_1313_TCP_PORT BLOG_URL BLOG_PORT
 do
     eval value=\$$p
