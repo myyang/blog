@@ -19,4 +19,4 @@ fi
 cp /config.templ config.toml
 cp /hyde-overrides.css themes/hyde-x/static/css/
 cp /poole-overrides.css themes/hyde-x/static/css/
-hugo server -w -b $BLOG_URL --bind="0.0.0.0" -v -p $BLOG_PORT -d /var/_built
+hugo server -w -b "https://$BLOG_URL" --bind="0.0.0.0" -v -p $BLOG_PORT -d /var/_built
