@@ -4,7 +4,7 @@ maintainer ymy1019@gmail.com
 
 volume /var/_built
 
-run apt-get update && apt-get install -y curl git cron
+run apt-get update && apt-get install -y curl cron unzip
 
 add default.conf /etc/nginx/conf.d/
 add nginx.conf /etc/nginx/
